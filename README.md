@@ -44,7 +44,8 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Routes
 
 - `/` — product
-- `/console` — SIU queue, filters, interactive scorer
-- `/console/[id]` — claim file
+- `/queue` — live CMS Medicare Part B PUF (CY 2024), scored
+- `/sample` — synthetic CMS-1500 walkthrough
+- `/sample/[id]` — synthetic claim file
 - `/pipeline` — dbt grains and features
 - `/model` — model card and holdout matrix

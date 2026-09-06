@@ -69,10 +69,10 @@ export default function Home() {
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
-            href="/console"
+            href="/queue"
             className="inline-flex items-center justify-center border border-ink bg-ink px-4 py-2.5 text-[12px] tracking-[0.14em] text-paper uppercase hover:bg-transparent hover:text-ink"
           >
-            Open the SIU console
+            Open the queue
           </Link>
           <Link
             href="/pipeline"
@@ -261,12 +261,12 @@ export default function Home() {
           ))}
         </ul>
         <p className="mt-8 max-w-2xl text-[14px] leading-relaxed text-muted">
-          Demo environment. {sample} flagged lines in the current SIU sample.
-          All patients are synthetic Medicare Beneficiary Identifiers. No
-          protected health information is stored or transmitted.
+          The live queue is real CMS Medicare Part B public use data (CY 2024),
+          aggregated to provider and service. {sample} synthetic flagged lines
+          remain in Sample for the case-file walkthrough. No PHI.
         </p>
         <Link
-          href="/console"
+          href="/queue"
           className="mt-8 inline-block border border-ink bg-ink px-4 py-2.5 text-[12px] tracking-[0.14em] text-paper uppercase hover:bg-transparent hover:text-ink"
         >
           Work the queue

@@ -11,12 +11,15 @@ export function Footer() {
             unbundling fraud patterns, reducing manual auditing requirements by 30%.
           </p>
           <p className="mt-4 text-[12px] tracking-[0.12em] uppercase text-muted">
-            Project 04 · SIU demo · Synthetic claims · No PHI
+            Project 04 · CMS PUF 2024 · Sample is synthetic · No PHI
           </p>
         </div>
         <div className="flex flex-col gap-2 text-[13px] text-muted">
-          <Link href="/console" className="hover:text-ink">
-            Auditor console
+          <Link href="/queue" className="hover:text-ink">
+            SIU queue
+          </Link>
+          <Link href="/sample" className="hover:text-ink">
+            Sample
           </Link>
           <Link href="/pipeline" className="hover:text-ink">
             Pipeline

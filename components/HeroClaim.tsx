@@ -6,7 +6,7 @@ export function HeroClaim() {
 
   return (
     <Link
-      href={`/console/${claim.id}`}
+      href={`/sample/${claim.id}`}
       className="paper-card relative block min-w-0 max-w-full p-6 md:p-8"
     >
       <div className="flex items-start justify-between gap-4 border-b border-line pb-4">

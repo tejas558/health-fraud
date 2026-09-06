@@ -32,10 +32,10 @@ export default async function ClaimPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-[1180px] px-5 py-10">
       <Link
-        href="/console"
+        href="/sample"
         className="text-[12px] tracking-[0.12em] uppercase text-muted hover:text-ink"
       >
-        ← Queue
+        ← Sample
       </Link>
 
       <div className="mt-6 flex flex-col gap-4 border-b border-line pb-6 md:flex-row md:items-end md:justify-between">
@@ -68,7 +68,7 @@ export default async function ClaimPage({ params }: Props) {
         <div>
           <div className="paper-card p-6 md:p-8">
             <p className="text-[11px] tracking-[0.18em] uppercase text-muted">
-              CMS-1500 · {claim.date}
+              CMS-1500 · {claim.date} · synthetic
             </p>
             <dl className="mt-6 grid grid-cols-1 gap-x-6 gap-y-5 text-[13px] sm:grid-cols-2 md:grid-cols-3">
               <Fact k="Patient" v={`${claim.patient}`} />
@@ -124,7 +124,7 @@ export default async function ClaimPage({ params }: Props) {
                 {related.map((r) => (
                   <li key={r.id}>
                     <Link
-                      href={`/console/${r.id}`}
+                      href={`/sample/${r.id}`}
                       className="flex items-center justify-between gap-4 py-3 text-[13px] hover:bg-paper-2/40"
                     >
                       <span className="font-mono text-[12px]">{r.id}</span>
@@ -157,6 +157,12 @@ export default async function ClaimPage({ params }: Props) {
               a medical-record chase.
             </p>
           </div>
+          <Link
+            href="/queue"
+            className="border border-line px-4 py-3 text-center text-[12px] tracking-[0.12em] uppercase hover:border-ink"
+          >
+            Real CMS queue
+          </Link>
         </aside>
       </div>
     </div>

@@ -59,13 +59,13 @@ export function Workbench() {
       <div className="flex flex-col gap-2 border-b border-line pb-6 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="text-[11px] tracking-[0.18em] uppercase text-muted">
-            SIU queue · 12 Mar–22 Mar 2026
+            Sample · synthetic CMS-1500
           </p>
-          <h1 className="mt-2 font-serif text-4xl italic">Auditor console</h1>
+          <h1 className="mt-2 font-serif text-4xl italic">Sample</h1>
         </div>
         <p className="max-w-sm text-[13px] leading-relaxed text-muted">
-          Today&apos;s scored sample from the synthetic CMS feed. Default view is
-          flagged. Clear the filter to see the full mix.
+          Planted fraud labels on fake line items so you can open a case file.
+          The live queue uses real CMS PUF. Default view is flagged.
         </p>
       </div>
 
@@ -172,13 +172,18 @@ export function Workbench() {
         </aside>
 
         <div>
-          <p className="mb-3 text-[12px] text-muted">
-            {rows.length} claim{rows.length === 1 ? "" : "s"}
+          <p className="mb-3 flex flex-wrap items-baseline justify-between gap-2 text-[12px] text-muted">
+            <span>
+              {rows.length} claim{rows.length === 1 ? "" : "s"}
+            </span>
+            <Link href="/queue" className="tracking-[0.08em] uppercase hover:text-ink">
+              Real CMS queue →
+            </Link>
           </p>
           <ul className="divide-y divide-line border border-line md:hidden">
             {rows.map((c) => (
               <li key={c.id}>
-                <Link href={`/console/${c.id}`} className="block px-3 py-3">
+                <Link href={`/sample/${c.id}`} className="block px-3 py-3">
                   <div className="flex items-baseline justify-between gap-3">
                     <span className="font-mono text-[12px]">{c.id}</span>
                     <span
@@ -242,7 +247,7 @@ export function Workbench() {
                       </span>
                     </td>
                     <td className="px-3 py-3">
-                      <Link href={`/console/${c.id}`} className="font-mono text-[12px] underline-offset-2 hover:underline">
+                      <Link href={`/sample/${c.id}`} className="font-mono text-[12px] underline-offset-2 hover:underline">
                         {c.id}
                       </Link>
                       <p className="text-[11px] text-muted">{c.date}</p>

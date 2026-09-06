@@ -111,7 +111,7 @@ export default function ModelPage() {
       </section>
 
       <Link
-        href="/console"
+        href="/queue"
         className="mt-12 inline-block border border-ink bg-ink px-4 py-2.5 text-[12px] tracking-[0.14em] text-paper uppercase hover:bg-transparent hover:text-ink"
       >
         Score the queue

@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/console", label: "Console" },
+  { href: "/queue", label: "Queue" },
+  { href: "/sample", label: "Sample" },
   { href: "/pipeline", label: "Pipeline" },
   { href: "/model", label: "Model" },
 ];
@@ -39,7 +40,7 @@ export function Nav() {
             </Link>
           ))}
           <Link
-            href="/console"
+            href="/queue"
             className="border border-ink bg-ink px-3 py-1.5 text-[12px] tracking-[0.12em] text-paper uppercase hover:bg-transparent hover:text-ink"
           >
             Open queue
@@ -64,7 +65,7 @@ export function Nav() {
                 {l.label}
               </Link>
             ))}
-            <Link href="/console" onClick={() => setOpen(false)} className="text-flag">
+            <Link href="/queue" onClick={() => setOpen(false)} className="text-flag">
               Open queue
             </Link>
           </div>
