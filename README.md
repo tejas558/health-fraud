@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aegis — Automated Claims Fraud & Waste Detector
 
-## Getting Started
+Project 04. A payment-integrity console that scores CMS-style healthcare claims for **upcoding**, **unbundling**, **duplicates**, and **phantom billing**.
 
-First, run the development server:
+Built for SIU / payment-integrity teams at UnitedHealth Group, Anthem (Elevance), Optum, and Zocdoc.
+
+## What it does
+
+Payers process billions of claim lines. Aegis is an XGBoost classifier (Random Forest baseline) trained on 500k+ synthetic CMS carrier lines. High-risk lines land in an auditor queue with SHAP-style drivers instead of a random sample.
+
+Resume line:
+
+> Built a claims anomaly detection pipeline using XGBoost and Snowflake, analyzing 500k+ synthetic CMS claims to identify potential upcoding and unbundling fraud patterns, reducing manual auditing requirements by 30%.
+
+## Stack
+
+| Layer | Tool |
+| --- | --- |
+| Ingest | Python, CMS PUF + synthetic CMS-1500 overlay |
+| Transform | dbt on Snowflake / BigQuery |
+| Model | XGBoost, Random Forest |
+| Product UI | Next.js (this repo). Streamlit was the research notebook. |
+
+This repository is the product surface: landing, SIU console, claim file, pipeline, and model card. The scorer in the console is a calibrated stand-in for the Python model so the site can run on Vercel without a GPU or warehouse.
+
+## Demo data
+
+All patients are synthetic Medicare Beneficiary Identifiers. No PHI.
+
+## Local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/` — product
+- `/console` — SIU queue, filters, interactive scorer
+- `/console/[id]` — claim file
+- `/pipeline` — dbt grains and features
+- `/model` — model card and holdout matrix
