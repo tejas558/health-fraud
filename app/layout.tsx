@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   description:
     "An XGBoost pipeline that scores CMS-style healthcare claims for upcoding, unbundling, and duplicate billing. Built for SIU teams at UnitedHealth, Anthem, Optum, and Zocdoc.",
-  metadataBase: new URL("https://aegis-claims.vercel.app"),
+  metadataBase: new URL("https://health-fraud.vercel.app"),
   openGraph: {
     title: "Aegis — Automated Claims Fraud & Waste Detector",
     description:
